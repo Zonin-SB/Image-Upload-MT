@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 
 router.post('/upload',upload.single('image'),(req,res)=>{
 try {
-    res.status(200).json({ imageUrl: `http://localhost:3001/public/images/${req.file.filename}` });
+    res.status(200).json({ imageUrl: `http://localhost:3001/images/${req.file.filename}` });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
